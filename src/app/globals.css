@@ -1,26 +1,17 @@
+@import 'react-image-crop/dist/ReactCrop.css';
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg-primary: #18191A;
+  --bg-secondary: #242526;
+  --bg-tertiary: #3A3B3C;
+  --text-primary: #E4E6EB;
+  --text-secondary: #B0B3B8;
+  --accent: #2D88FF;
+  --border-color: #393a3b;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
