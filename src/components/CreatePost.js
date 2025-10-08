@@ -112,6 +112,7 @@ const CreatePost = () => {
               onChange={c => setCrop(c)}
               onComplete={c => setCompletedCrop(c)}
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img ref={imgRef} src={imgSrc} alt="Crop me" style={{ maxHeight: '80vh' }} />
             </ReactCrop>
             <div className="flex justify-end mt-4 space-x-2">
@@ -126,13 +127,13 @@ const CreatePost = () => {
         <textarea
           {...register('text_content')}
           placeholder="What's on your mind?"
-          className="w-full bg-[var(--bg-secondary)] border border-border-color rounded-md p-2 text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-accent"
+          className="w-full bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-md p-2 text-text-primary placeholder-[var(--text-secondary)] focus:outline-none focus:ring-2 focus:ring-accent"
         />
         {errors.text_content && <p className="text-red-500 text-xs mt-1">{errors.text_content.message}</p>}
 
-        <div {...getRootProps()} className={`mt-4 border-2 border-dashed border-border-color rounded-lg p-6 text-center cursor-pointer ${isDragActive ? 'border-accent' : ''}`}>
+        <div {...getRootProps()} className={`mt-4 border-2 border-dashed border-[var(--border-color)] rounded-lg p-6 text-center cursor-pointer ${isDragActive ? 'border-accent' : ''}`}>
           <input {...getInputProps()} />
-          <p className="text-text-secondary">Drag & drop up to 4 images here, or click to select files</p>
+          <p className="text-[var(--text-secondary)]">Drag & drop up to 4 images here, or click to select files</p>
         </div>
 
         {files.length > 0 && (
