@@ -10,8 +10,9 @@ const useAxios = () => {
   useEffect(() => {
     const requestIntercept = axiosInstance.interceptors.request.use(
       (config) => {
-        // Ensure ngrok header is always present
-        config.headers['ngrok-skip-browser-warning'] = 'true';
+        // Ensure ngrok bypass headers are always present
+        config.headers['ngrok-skip-browser-warning'] = '6024';
+        config.headers['User-Agent'] = 'FeedbookApp/1.0';
         
         if (token) {
           config.headers['Authorization'] = `Bearer ${token}`;
