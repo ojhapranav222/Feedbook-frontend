@@ -10,6 +10,9 @@ const useAxios = () => {
   useEffect(() => {
     const requestIntercept = axiosInstance.interceptors.request.use(
       (config) => {
+        // Ensure ngrok header is always present
+        config.headers['ngrok-skip-browser-warning'] = 'true';
+        
         if (token) {
           config.headers['Authorization'] = `Bearer ${token}`;
         }
